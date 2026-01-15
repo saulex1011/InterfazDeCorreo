@@ -1,5 +1,6 @@
-import javax.swing.*;
+
 import java.awt.*;
+import javax.swing.*;
 
 public class FormularioSwing {
 
@@ -12,8 +13,10 @@ public class FormularioSwing {
                 UIManager.setLookAndFeel(
                         UIManager.getSystemLookAndFeelClassName()
                 );
-            } catch (Exception e) {
+            } catch (UnsupportedLookAndFeelException | ClassNotFoundException
+                    | InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
+                System.err.println("Failed to set system look and feel: " + e.getMessage());
             }
 
             // Ventana principal
@@ -56,9 +59,9 @@ public class FormularioSwing {
 
                 JOptionPane.showMessageDialog(
                         frame,
-                        "Nombre: " + nombre +
-                        "\nEdad: " + edad +
-                        "\nPaís: " + pais,
+                        "Nombre: " + nombre
+                        + "\nEdad: " + edad
+                        + "\nPaís: " + pais,
                         "Datos Registrados",
                         JOptionPane.INFORMATION_MESSAGE
                 );
@@ -73,4 +76,3 @@ public class FormularioSwing {
         });
     }
 }
-
