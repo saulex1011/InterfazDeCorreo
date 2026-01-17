@@ -2,9 +2,10 @@ package controladores;
 
 import java.awt.*;
 import javax.swing.*;
-import gui.Inicio;
-import gui.Registro;
-import logica.LogicaInicio;
+import gui.Correo;
+import gui.EnvCorreo;
+import logica.LogicaCorreo;
+import logica.LogicaEnvCorreo;
 
 /*
     Idea: La idea del Envcorreo es crear una interfaz donde el usuario

@@ -3,8 +3,11 @@ package controladores;
 import java.awt.*;
 import javax.swing.*;
 import gui.Inicio;
-import gui.Registro;
+import gui.Correo;
+import gui.EnvCorreo;
 import logica.LogicaInicio;
+import logica.LogicaCorreo;
+import logica.LogicaEnvCorreo;
 
 /*
     Idea: La idea del correo es que el usuario tenga un correo electrónico local donde:

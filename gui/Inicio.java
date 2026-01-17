@@ -1,18 +1,19 @@
 package gui;
-import logica.LogicaInicio;
+
 import java.awt.*;
 import javax.swing.*;
 
 
 public class Inicio extends JFrame{
     
+    public JButton btnInicio;
+    public JButton btnRegistrar;
+
     public Inicio() {
         setTitle("Sistema - Inicio de Sesión");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
-        LogicaInicio facilidad=new LogicaInicio();
 
         // ===== MENÚ SUPERIOR =====
         JMenuBar menuBar = new JMenuBar();
@@ -64,22 +65,14 @@ public class Inicio extends JFrame{
         formPanel.add(txtPassword);
 
         // Botones
-        JButton btnLogin = new JButton("Ingresar");
-        JButton btnRegistrar = new JButton("Registrar nuevo usuario");
+        btnInicio = new JButton("Ingresar");
+        btnRegistrar = new JButton("Registrar nuevo usuario");
 
-        formPanel.add(btnLogin);
+        formPanel.add(btnInicio);
         formPanel.add(btnRegistrar);
 
         panel.add(formPanel, BorderLayout.CENTER);
 
-        facilidad.abrirInicio();
-
-        btnLogin.addActionListener(e-> facilidad.abrirRegistro());
-
         add(panel);
-    }
-
-    public void mostrar(){
-        this.setVisible(true);
     }
 }

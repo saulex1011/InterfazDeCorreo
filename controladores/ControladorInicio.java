@@ -1,10 +1,13 @@
 package controladores;
 
-import java.awt.*;
-import javax.swing.*;
+import gui.About;
+import gui.Correo;
 import gui.Inicio;
 import gui.Registro;
+import logica.LogicaAbout;
+import logica.LogicaCorreo;
 import logica.LogicaInicio;
+
 
 /*
     Idea: La idea del inicio es que sea la bienvenida
@@ -18,26 +21,34 @@ import logica.LogicaInicio;
 
 public class ControladorInicio{
     
-    private LogicaInicio logica;
     private Inicio inicio;
-    /* Ejemplo de constructor con inyección de dependencias
-    public InicioControlador(LogicaInicio logica, Inicio inicio) {
-        this.logica = logica;
+    private Registro registro;
+    private Correo correo;
+    private About about;
+    private LogicaInicio logica;
+    private LogicaCorreo logicaCorreo;
+    private LogicaAbout logicaAbout;
+
+    //=====Clases de Inicio=====
+    
+    public ControladorInicio(Inicio inicio) {
+
         this.inicio = inicio;
 
+        inicio.btnRegistrar.addActionListener(e-> abrirRegistro());
     }
-    */
 
+    public void mostrarInicio(){
+        // Hacemos visible la ventana de Inicio
+        inicio.setVisible(true);
+    }
 
-
-    public void abrirInicio() {
-        // 1. Creamos el objeto de la segunda ventana
-        Inicio comenzar = new Inicio();
+    public void abrirRegistro() {
+        // Creamos la ventana de nuevo Registro
+        Registro comenzar = new Registro();
         
-        // 2. La hacemos visible
-        comenzar.mostrar();
-        
-        // OPCIONAL: Si quieres cerrar la ventana principal al abrir esta:
-        // ((JFrame)javax.swing.SwingUtilities.getWindowAncestor((java.awt.Component)e.getSource())).dispose();
+        //Hacemos visible el registro y dejammos en espera Inicio
+        comenzar.setVisible(true);
+        inicio.dispose();
     }
 }

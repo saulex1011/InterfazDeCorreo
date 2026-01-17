@@ -1,16 +1,13 @@
 package Main;
 
 import controladores.*;
-import logica.*;
 import gui.*;
-
 
 public class Main{
     public static void main(String[] args) {
+        Inicio inicio = new Inicio();
+        new ControladorInicio(inicio);
 
-        SwingUtilities.invokeLater(() -> {
-            Logica facilidad = new Logica();
-            facilidad.abrirInicio();
-        });
+        inicio.setVisible(true);
     }
 }

@@ -3,10 +3,7 @@ package gui;
 import java.awt.*;
 import javax.swing.*;
 
-public class Registro extends JFrame {
-
-    public JButton btnRegistrar;
-    public JButton btnVolver;
+public class EnvCorreo extends JFrame {
 
     public Registro() {
         setTitle("Registro de usuario");
@@ -28,10 +25,8 @@ public class Registro extends JFrame {
         formPanel.add(txtNuevaPassword);
 
         // Botón
-        btnVolver = new JButton("Volver");
-        formPanel.add(btnVolver);
-
-        btnRegistrar = new JButton("Registrar");
+        JButton btnRegistrar = new JButton("Registrar");
+        formPanel.add(new JLabel()); // espacio vacío
         formPanel.add(btnRegistrar);
 
         add(formPanel);

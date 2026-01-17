@@ -1,10 +1,6 @@
 package controladores;
 
-import java.awt.*;
-import javax.swing.*;
 import gui.Inicio;
-import gui.Registro;
-import logica.LogicaInicio;
 
 /*
     Idea: La idea del registro que permita al usuario crear una nueva
