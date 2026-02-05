@@ -21,21 +21,17 @@ public class ControladorNavegacion {
 
         //==== CONTROLADORES DE INICIO ====
         inicio.btnRegistrar.addActionListener(e ->
-                ventana.mostrarVista("registro")
+                mostrar("registro")
         );
 
-        inicio.btnIniciarSesion.addActionListener(e ->
-            System.out.println("Iniciar sesión clickeado")  //cambiar por la lógica de iniciar sesión  
-            //ventana.mostrarVista("correo")
-        );
+        //Conexión con el controlador de login
+        new ControladorLogin(inicio, this);
+        //Conexión con el controlador de registro
+        new ControladorRegistro(this, registro);  
+    }
 
-        //==== CONTROLADORES DE REGISTRO ====
-        registro.btnRegistrar.addActionListener(e->
-                ventana.mostrarVista("inicio")
-        );
-
-        registro.btnVolver.addActionListener(e->
-                ventana.mostrarVista("inicio")
-        );  
+    public void mostrar(String vista) {
+        //ventana.mostrarVista("correo"); //El bueno
+        ventana.mostrarVista(vista);
     }
 }
