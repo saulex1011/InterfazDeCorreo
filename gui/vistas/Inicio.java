@@ -17,8 +17,6 @@ public class Inicio extends PanelFondo{
 
         super("util/imagenes/fondo.png");
         setLayout(new BorderLayout());
-        
-
 
         // ===== MENÚ SUPERIOR (Barra de herramientas)=====
 /*
@@ -75,11 +73,11 @@ public class Inicio extends PanelFondo{
 */
         // ===== PANEL PRINCIPAL =====
         panel.add(titulo, BorderLayout.NORTH);
-        formPanel.add(new JLabel("Usuario:"));
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Usuario:</font></html>"));
 
         // ===== PANEL FORMULARIO =====
         formPanel.add(txtUsuario);
-        formPanel.add(new JLabel("Contraseña:"));
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Contraseña:</font></html>"));
         formPanel.add(txtPassword);
 
         // ===== BOTONES =====

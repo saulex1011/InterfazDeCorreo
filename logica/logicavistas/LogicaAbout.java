@@ -1,4 +1,4 @@
-package logica;
+package logica.logicavistas;
 
 public class LogicaAbout {
 

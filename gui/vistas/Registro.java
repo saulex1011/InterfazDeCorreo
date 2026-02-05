@@ -1,12 +1,17 @@
 package gui.vistas;
 
+import gui.componentes.PanelFondo;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class Registro extends JPanel {
+public class Registro extends PanelFondo{
+    
+    //botones
     public JButton btnRegistrar;
     public JButton btnVolver;
+
+    //información de registro
     public JTextField txtNombreUsuario;
     public JTextField txtEmail;
     public JTextField txtNombresCompletos;
@@ -15,6 +20,9 @@ public class Registro extends JPanel {
     public JPasswordField txtRepetirContrasena;
 
     public Registro() {
+        // =====PANEL DE FONDO=====
+
+        super("util/imagenes/fondo.png");
         setLayout(new BorderLayout());
 
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
@@ -22,77 +30,45 @@ public class Registro extends JPanel {
 
         JLabel titulo = new JLabel("Registro de Nuevo Usuario", SwingConstants.CENTER);
         titulo.setFont(new Font("Arial", Font.BOLD, 16));
-        mainPanel.add(titulo, BorderLayout.NORTH);
 
         JPanel formPanel = new JPanel(new GridLayout(7, 2, 10, 10));
         
-        formPanel.add(new JLabel("Nombre de usuario:"));
         txtNombreUsuario = new JTextField();
-        formPanel.add(txtNombreUsuario);
-
-        formPanel.add(new JLabel("Email:"));
         txtEmail = new JTextField();
-        formPanel.add(txtEmail);
-
-        formPanel.add(new JLabel("Nombres Completos:"));
         txtNombresCompletos = new JTextField();
-        formPanel.add(txtNombresCompletos);
-
-        formPanel.add(new JLabel("Fecha de nacimiento (dd/mm/aaaa):"));
         txtFechaNacimiento = new JTextField();
-        formPanel.add(txtFechaNacimiento);
-
-        formPanel.add(new JLabel("Contraseña:"));
         txtContrasena = new JPasswordField();
-        formPanel.add(txtContrasena);
-
-        formPanel.add(new JLabel("Repetir contraseña:"));
         txtRepetirContrasena = new JPasswordField();
-        formPanel.add(txtRepetirContrasena);
-
-        mainPanel.add(formPanel, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         btnVolver = new JButton("Volver");
-        btnRegistrar = new JButton("Registrar");
+        btnRegistrar = new JButton("Registrar"); 
+
+        //Añadir los compontentes a la ventana (.add)
+        mainPanel.add(titulo, BorderLayout.NORTH);
+
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Nombre de usuario:</font></html>"));
+        formPanel.add(txtNombreUsuario);
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Correo electrónico:</font></html>"));
+        formPanel.add(txtEmail);
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Nombres Completos:</font></html>"));        
+        formPanel.add(txtNombresCompletos);
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Fecha de nacimiento (dd/mm/aaaa):</font></html>"));
+        formPanel.add(txtFechaNacimiento);
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Contraseña:</font></html>"));
+        formPanel.add(txtContrasena);
+        formPanel.add(new JLabel("<html><font color='#E7F716'>Repetir contraseña:</font></html>"));
+        formPanel.add(txtRepetirContrasena);
+
         buttonPanel.add(btnVolver);
         buttonPanel.add(btnRegistrar);
 
+        mainPanel.add(formPanel, BorderLayout.CENTER);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        formPanel.setOpaque(false); // Hacer el panel transparente
+        buttonPanel.setOpaque(false); // Hacer el panel transparente
+        mainPanel.setOpaque(false); // Hacer el panel transparente
 
         this.add(mainPanel);
-    }
-    
-    public String getNombreUsuario() {
-        return txtNombreUsuario.getText().trim();
-    }
-    
-    public String getEmail() {
-        return txtEmail.getText().trim();
-    }
-    
-    public String getNombresCompletos() {
-        return txtNombresCompletos.getText().trim();
-    }
-    
-    public String getFechaNacimiento() {
-        return txtFechaNacimiento.getText().trim();
-    }
-    
-    public String getContrasena() {
-        return new String(txtContrasena.getPassword());
-    }
-    
-    public String getRepetirContrasena() {
-        return new String(txtRepetirContrasena.getPassword());
-    }
-    
-    public void limpiarCampos() {
-        txtNombreUsuario.setText("");
-        txtEmail.setText("");
-        txtNombresCompletos.setText("");
-        txtFechaNacimiento.setText("");
-        txtContrasena.setText("");
-        txtRepetirContrasena.setText("");
     }
 }
